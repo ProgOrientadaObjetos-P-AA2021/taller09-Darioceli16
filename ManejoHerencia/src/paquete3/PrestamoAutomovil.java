@@ -5,13 +5,14 @@
  */
 package paquete3;
 
+import paquete2.Prestamo;
 import paquete5.Persona;
 
 /**
  *
  * @author reroes
  */
-public class PrestamoAutomovil {
+public class PrestamoAutomovil extends Prestamo{
      private String tipo;
     private String marca;
     private Persona garante;
@@ -46,7 +47,7 @@ public class PrestamoAutomovil {
     }
     
     public void EstablecerValor_mensual() {
-        valor_mensual =valor/ObtenerMeses();
+        valor_mensual =valor/obtenerTiempoPrestamoMeses();
     }
     
     public String ObtenerTipo() {
@@ -77,8 +78,8 @@ public class PrestamoAutomovil {
                 + "\nTipo: %s"
                 + "\nMarca: %s"
                 + "\nValor Auto: $%.2f"
-                + "\nValor Mensual: $%.2f", cadena,ObtenerBeneficiario().ObtenerNombre()+" "+ObtenerBeneficiario().ObtenerApellido(),
-                ObtenerMeses(),ObtenerCiudad().toLowerCase(),ObtenerGarante().ObtenerNombre()+" "+ObtenerGarante().ObtenerApellido(),
+                + "\nValor Mensual: $%.2f", cadena,ObtenerBeneficiario().obtenerNombre()+" "+ObtenerBeneficiario().obtenerApellido(),
+                obtenerTiempoPrestamoMeses(),obtenerCiudadPrestamo().toLowerCase(),ObtenerGarante().obtenerNombre()+" "+ObtenerGarante().obtenerApellido(),
                 ObtenerTipo(),ObtenerMarca(),ObtenerValor(),ObtenerValor_mensual());
         
         return cadena;

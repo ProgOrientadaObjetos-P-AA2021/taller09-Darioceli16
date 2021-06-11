@@ -5,13 +5,14 @@
  */
 package paquete4;
 
+import paquete2.Prestamo;
 import paquete5.Persona;
 
 /**
  *
  * @author reroes
  */
-public class PrestamoEducativo {
+public class PrestamoEducativo extends Prestamo{
     
     private String niveldeestudio;
     private String centroeducativo;
@@ -39,7 +40,7 @@ public class PrestamoEducativo {
     }
 
     public void EstablecerValormensual() {
-        double cuota=valorcarrera/ObtenerMeses();
+        double cuota=valorcarrera/obtenerTiempoPrestamoMeses();
         valormensual=cuota-(cuota*0.1);
     }
 
@@ -68,8 +69,8 @@ public class PrestamoEducativo {
                 + "\nCentro Educativo: %s"
                 + "\nNivel De Estudio: %s"
                 + "\nValor Carrera: $%.2f"
-                + "\nValor Mensual: $%.2f", cadena,ObtenerBeneficiario().ObtenerNombre()+" "+ObtenerBeneficiario().ObtenerApellido(),
-                ObtenerMeses(),ObtenerCiudad().toUpperCase(),ObtenerCentroeducativo(),ObtenerNiveldeestudio(),ObtenerValorcarrera(),ObtenerValormensual());
+                + "\nValor Mensual: $%.2f", cadena,ObtenerBeneficiario().obtenerNombre()+" "+ObtenerBeneficiario().obtenerApellido(),
+                obtenerTiempoPrestamoMeses(),obtenerCiudadPrestamo().toUpperCase(),ObtenerCentroeducativo(),ObtenerNiveldeestudio(),ObtenerValorcarrera(),ObtenerValormensual());
         
         return cadena;
     }
